@@ -77,12 +77,3 @@ Terraform provisions the entire stack in a designated AWS region against a pre-e
 3. Apply with `terraform apply`
 4. ALB DNS endpoint available in Terraform outputs
 5. Push application images to ECR; ECS auto-deploys on task definition updates
-
-## Interview Talking Points
-
-- "I designed and deployed a production Fargate workload with service discovery, load balancing, and observability — all in version-controlled Terraform."
-- "The architecture separates concerns: web tier and caching layer, with proper health checks and inter-service communication via Service Connect."
-- "All secrets are sourced from SSM Parameter Store with role-based injection; no sensitive data in code or task definitions."
-- "ECS Service Connect eliminates the need for hardcoded service IPs; internal DNS provides sufficient service discovery."
-- "Separate task execution (bootstrap) and task (runtime) IAM roles follow least-privilege principles for production-grade security."
-- "EFS provides persistent, encrypted storage for media assets across container restarts without external dependencies."
